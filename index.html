@@ -3,138 +3,274 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>はじめまして（自己紹介）</title>
+<title>ややって何者？〜50代になるまで気づけなかった話〜</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700;900&display=swap');
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: 'Noto Sans JP', sans-serif;
     background: #f5f5f0;
     color: #1a1a1a;
-    padding: 40px 20px;
+    padding: 20px 10px;
+    line-height: 1.8;
   }
 
-  /* ===== 共通パーツ ===== */
-  .page { max-width: 760px; margin: 0 auto 80px; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
-  .page-header { padding: 36px 40px 28px; position: relative; }
-  .page-content { padding: 0 40px 40px; }
+  /* ===== 全体コンテナ ===== */
+  .page { max-width: 600px; margin: 0 auto 40px; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  
+  /* ===== ヘッダー（プレミアムダークゴールド） ===== */
+  .page-header { 
+    background: linear-gradient(135deg, #1c0d02 0%, #3b1702 60%, #5c2505 100%); 
+    color: #fff; 
+    padding: 40px 20px 35px; 
+    text-align: center; 
+    border-bottom: 4px solid #b45309;
+  }
+  .icon-user { font-size: 32px; display: block; margin-bottom: 8px; }
+  .page-title { font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 900; line-height: 1.4; margin-bottom: 8px; color: #fff; }
+  .page-subtitle { font-size: 13px; color: #f3f4f6; font-weight: 500; letter-spacing: 0.05em; }
 
-  .badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; padding: 4px 12px; border-radius: 999px; margin-bottom: 10px; }
-  .page-title { font-family: 'Noto Serif JP', serif; font-size: 28px; font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
-  .page-subtitle { font-size: 14px; color: #666; line-height: 1.7; }
+  /* ===== コンテンツエリア ===== */
+  .page-content { padding: 30px 20px 40px; }
 
-  .section { margin-bottom: 36px; }
-  .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 6px; }
-  .section h2 { font-size: 20px; font-weight: 700; margin-bottom: 14px; line-height: 1.4; border-left: 4px solid #2563a8; padding-left: 12px; }
-  .body-text { font-size: 15px; color: #333; line-height: 2.0; margin-bottom: 18px; text-align: justify; }
+  /* ===== 小見出し（各セクションの区切り） ===== */
+  .section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(90deg, #451a03 0%, #b45309 100%);
+    padding: 10px 16px;
+    border-radius: 6px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 8px rgba(69,26,3,0.1);
+  }
 
-  .divider { border: none; border-top: 2px dashed #e0e0e0; margin: 36px 0; }
+  /* ===== 本文テキスト（1行ずつの読みやすさを重視） ===== */
+  .body-text { font-size: 15px; color: #2d2d2d; margin-bottom: 18px; text-align: left; }
+  
+  /* ===== 強調・色文字 ===== */
+  .txt-bold { font-weight: 700; }
+  .txt-gold { color: #b45309; font-weight: 700; }
+  .txt-red { color: #dc2626; font-weight: 700; }
+  .txt-large { font-size: 16.5px; font-weight: 700; }
+  .marker-gold { background: linear-gradient(transparent 60%, #fef3c7 60%); font-weight: 700; }
 
-  /* カード系 */
-  .card { border-radius: 12px; padding: 20px; margin-bottom: 16px; background: #f8fafc; border: 1px solid #e2e8f0; }
-  .card.featured { background: #dbeafe; border: 2px solid #2563a8; text-align: center; padding: 26px 20px; }
+  /* ===== X固定ポスト風の目立つ枠 ===== */
+  .tweet-box { 
+    background: #fffbeb; 
+    border-left: 4px solid #b45309;
+    padding: 18px 16px; 
+    margin: 25px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .tweet-box p { font-size: 15.5px; font-weight: 700; color: #451a03; line-height: 1.8; }
+  
+  /* ===== 箇条書き（所作のリスト） ===== */
+  .custom-list { list-style: none; margin: 20px 0 20px 5px; }
+  .custom-list li { position: relative; padding-left: 24px; font-size: 15px; color: #2d2d2d; margin-bottom: 10px; font-weight: 500; }
+  .custom-list li::before { content: "・"; position: absolute; left: 4px; top: 0; font-weight: 700; color: #b45309; }
 
-  /* まとめボックス */
-  .summary-box { border-radius: 14px; padding: 24px 28px; margin-top: 28px; }
-
-  /* ===== カラーテーマ（ブルー） ===== */
-  .theme-blue .page-header { background: linear-gradient(135deg, #1e3a5f 0%, #2563a8 100%); color: #fff; }
-  .theme-blue .badge { background: rgba(255,255,255,0.2); color: #fff; }
-  .theme-blue .page-title { color: #fff; }
-  .theme-blue .page-subtitle { color: rgba(255,255,255,0.75); }
-  .theme-blue .section-label { color: #2563a8; }
-  .theme-blue .section h2 { color: #1e3a5f; border-left-color: #2563a8; }
-  .theme-blue .summary-box { background: #eff6ff; border: 2px solid #bfdbfe; }
-
-  /* ユーティリティ */
-  .text-bold-blue { color: #2563eb; font-weight: 700; }
-  .emphasis-text { font-size: 22px; font-weight: 700; color: #1e3a5f; margin-bottom: 4px; display: block; letter-spacing: 0.05em; }
+  /* ===== ラストメッセージ（一言） ===== */
+  .final-box {
+    background: linear-gradient(135deg, #1c0d02 0%, #451a03 100%);
+    color: #fff;
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    margin-top: 40px;
+    border: 1px solid #b45309;
+  }
+  .final-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 3px 12px; border-radius: 999px; margin-bottom: 12px; background: #b45309; color: #fff; }
+  .final-text { font-size: 15px; font-weight: 700; color: #fff; line-height: 1.8; display: block; margin-bottom: 12px; }
+  .final-subtext { font-size: 14px; color: #fde68a; font-weight: 700; }
 </style>
 </head>
 <body>
 
-<div class="page theme-blue">
+<div class="page">
+  <!-- ヘッダー -->
   <div class="page-header">
-    <span class="badge">📖 PROFILE</span>
-    <h1 class="page-title">はじめまして（自己紹介）</h1>
-    <p class="page-subtitle">私の理念と、あなたに一番伝えたい大切なこと</p>
+    <span class="icon-user">👤</span>
+    <h1 class="page-title">ややって何者？</h1>
+    <p class="page-subtitle">〜50代になるまで気づけなかった話〜</p>
   </div>
 
   <div class="page-content">
 
-    <div class="section" style="margin-top: 30px;">
-      <p class="body-text">
-        数ある情報の中から、【はじめまして】を選んでこのページを開いていただき、本当にありがとうございます！✨<br>
-        改めまして、<strong>「やや」</strong>と申します。🤝
-      </p>
-      
-      <p class="body-text">
-        今、この文章を読んでくださっているあなたは、「もっと魅力的な男になりたい」「自分を磨いて自信をつけたい」「理想の人生や恋愛を叶えたい」と、心の中で強く願っている方ではないでしょうか。
-      </p>
-      <p class="body-text">
-        そんな前向きなあなたに向けて、まず最初に、私がどうしても、何よりも一番に伝えたい大切なメッセージがあります。👋
+    <p class="body-text txt-bold">はじめまして、ややです。</p>
+    
+    <p class="body-text">
+      このLINEに登録してくれたということは、少なからず「もっと魅力のある男になりたい」「女性から自然に選ばれる男になりたい」そんな気持ちがあるんだと思います。🔥
+    </p>
+
+    <p class="body-text">
+      そんなあなたに最初に伝えたいことがあります。
+    </p>
+
+    <p class="body-text">
+      それは、私が50代になるまで気づけなかった、<span class="txt-red txt-bold">あまりにも情けない、手痛い失敗の話</span>です。
+    </p>
+
+    <!-- X固定ポストセクション -->
+    <div class="tweet-box">
+      <p>
+        女性は怒らない。<br>
+        ただ静かに去る。
       </p>
     </div>
 
-    <!-- 強調カード -->
-    <div class="card featured">
-      <span style="font-size: 14px; color: #1e3a5f; display: block; margin-bottom: 8px; font-weight: 500;">胸を張って、これだけは言えます。</span>
-      <span class="emphasis-text">「恋愛や男磨きを始めるのに、<br>年齢なんて一切関係ない」</span>
-      <span style="font-size: 14px; color: #1e3a5f; display: block; margin-top: 8px; font-weight: 500;">ということです。🔥</span>
-    </div>
+    <p class="body-text">
+      私は長い間、恋愛がうまくいかない理由を、大きな勘違いをしていました。
+    </p>
 
-    <hr class="divider">
+    <p class="body-text">
+      身だしなみを整える。<br>
+      仕事を頑張る。<br>
+      お金を稼ぐ。<br>
+      美味しい店を知る。
+    </p>
 
-    <div class="section">
-      <div class="section-label">🔵 MY PROFILE</div>
-      <h2>現在の私と、泥臭かった過去の真実</h2>
-      
-      <p class="body-text">
-        驚かれるかもしれませんが、私は現在<span class="text-bold-blue">61歳</span>になります。
-      </p>
-      
-      <p class="body-text">
-        今の私は、女性の心理を深く理解し、どんな場面でも慌てずに自然体でエスコートできるようになりました。周囲の洗練された男たちとも対等に渡り合い、日々充実した時間を過ごしています。
-      </p>
-      
-      <p class="body-text">
-        しかし、最初からそんな風にスマートに生きられたわけでは決してありません。🙅‍♂️
-      </p>
-      
-      <div class="card">
-        <p class="body-text" style="margin-bottom: 0; font-size: 14.5px;">
-          むしろ、過去の私はあなた以上に泥臭く、不器用で、恋愛のセンスなんてミリグラムもありませんでした。数え切れないほどの失敗を犯し、数々の修羅場をくぐり抜け、そのたびにプライドをズタズタにされながら生きてきたのです。💦
-        </p>
-      </div>
-      
-      <p class="body-text">
-        「もう自分には無理なんじゃないか」「この年齢から変わるなんて遅すぎるんじゃないか」と、暗闇の中で頭を抱えた夜は一度や二度ではありません。
-      </p>
-    </div>
+    <p class="body-text">
+      そういうものさえあれば、男としての価値が上がり、女性から選ばれると思っていました。
+    </p>
 
-    <hr class="divider">
+    <p class="body-text">
+      でも、現実は違いました。
+    </p>
 
-    <div class="section">
-      <div class="section-label">🔵 MY MISSION</div>
-      <h2>この発信に込めた本当の想い</h2>
-      <p class="body-text">
-        そんな私が、なぜ今になってこのように「男磨き」や「マインド」について発信を始めたのか。
-      </p>
-      <p class="body-text">
-        それは、過去の私と同じように「変わりたいけれど、どうすればいいか分からない」「年齢を理由に諦めかけている」という人を、一人でも多く救い上げたいと本気で思ったからです。🎯
-      </p>
-      <p class="body-text">
-        私がこれまで何十年もかけて、身を削りながら学んできた経験、知識、そして女性心理の本質。これらを包み隠さずすべてあなたに共有します。あなたがこれからの人生で、無駄な回り道をしたり、痛い目をみたりする必要はありません。
-      </p>
-    </div>
+    <p class="body-text">
+      昨日まで笑顔だった女性が、少しずつ連絡を返さなくなる。<br>
+      誘っても予定が合わなくなる。
+    </p>
 
-    <!-- フッターまとめボックス -->
-    <div class="summary-box">
-      <div style="font-size:13px;font-weight:700;color:#2563a8;margin-bottom:8px;">📌 あなたへの約束</div>
-      <p style="font-size:14.5px;color:#1e3a5f;line-height:1.9; font-weight: 500;">
-        年齢を理由に諦める必要はどこにもありません。「変わりたい」と思ったその瞬間が、これからの人生で一番若い時です。一歩を踏み出せば、いつからでも自分を磨き、最高の自分に出会うことができます。私が全力であなたをサポートします。一緒に進んでいきましょう！🔥
-      </p>
+    <p class="body-text">
+      そして気づけば、<span class="txt-bold">何も言わずに、静かにいなくなっている。</span>
+    </p>
+
+    <p class="body-text">
+      何度も経験しました。本当に、何度も。
+    </p>
+
+    <p class="body-text">
+      実のところ当時の私は、フラれた理由がまったくわかりませんでした。
+    </p>
+
+    <p class="body-text txt-bold">
+      「ちゃんと奢ったのに」<br>
+      「優しくしたのに」<br>
+      「浮気だってしていない。何がダメだったんだろう」
+    </p>
+
+    <p class="body-text">
+      そうやって理由もわからず、<span class="txt-red">20年以上も同じ失敗を繰り返していました。</span>
+    </p>
+
+    <!-- 50代でようやく気づいた -->
+    <h2 class="section-title">▼ 50代でようやく気づいた真実</h2>
+    
+    <p class="body-text">
+      50代という人生の後半戦になって、私はようやく、残酷な真実に気づきました。
+    </p>
+
+    <p class="body-text">
+      女性が見ているのは、見た目でも、年収でも、肩書きでもなかった。
+    </p>
+
+    <p class="body-text">
+      本当に見られていたのは、<span class="txt-xlarge txt-gold marker-gold">「日常の所作」</span>でした。
+    </p>
+
+    <!-- 所作のリスト -->
+    <ul class="custom-list">
+      <li>店員さんへの態度</li>
+      <li>歩く速度</li>
+      <li>会話の聞き方</li>
+      <li>食事中の振る舞い</li>
+      <li>デートが終わったあとの、ふとした接し方</li>
+    </ul>
+
+    <p class="body-text">
+      言い訳のきかないそんな些細な部分に、男の余裕や人間性が全部、透けて出ていたんです。
+    </p>
+
+    <p class="body-text">
+      過去の私は、自分では気遣っているつもりでした。でも、実際は全く違いました。
+    </p>
+
+    <p class="body-text">
+      無意識のうちに致命的な減点を積み重ね、<span class="txt-red">本命の女性をがっかりさせ続けていた</span>んです。
+    </p>
+
+    <!-- 20年以上遠回りした -->
+    <h2 class="section-title">▼ 20年以上遠回りした、遅すぎた男</h2>
+    
+    <p class="body-text">
+      本当に、気づくのが遅すぎました。
+    </p>
+
+    <p class="body-text">
+      もっと早く知っていれば。もっと早く学んでいれば、大切な人を失わずに済んだのに。50代になって白髪混じりになってから気づくなんて、遅すぎる。そう激しく後悔したことが、何度もあります。
+    </p>
+
+    <p class="body-text">
+      でも、20年以上遠回りしたからこそ、確信を持って分かったこともあります。
+    </p>
+
+    <p class="body-text">
+      男の本当の魅力は、<br>
+      高級時計じゃない。高級車じゃない。ただの見栄でもない。
+    </p>
+
+    <p class="body-text txt-large txt-gold">
+      女性に心の底から安心感を与えられること。<br>
+      一緒にいて心地いいこと。<br>
+      目の前の人を、自然に大切にできること。
+    </p>
+
+    <p class="body-text">
+      結局、そういう当たり前の「所作」の積み重ねでした。
+    </p>
+
+    <!-- このLINEで伝えたいこと -->
+    <h2 class="section-title">▼ このLINEであなたに伝えたいこと</h2>
+    
+    <p class="body-text">
+      私は恋愛の天才ではありません。むしろ逆です。<br>
+      人よりも傷つき、たくさん失敗し、<span class="txt-bold txt-red">「気づくのがあまりにも遅すぎた男」</span>です。
+    </p>
+
+    <p class="body-text">
+      だからこそ、あなたには同じ失敗をしてほしくない。
+    </p>
+
+    <p class="body-text">
+      このLINEでは、私が20年以上、血のにじむような遠回りをして学んだ「大人の男磨きの結論」を、できるだけわかりやすく共有していきます。
+    </p>
+
+    <p class="body-text">
+      もし今のあなたが、「もう年齢的に遅いかも」そう思っているなら安心してください。
+    </p>
+
+    <p class="body-text">
+      私が本当に変われたのは、50代になってからです。<br>
+      年齢は関係ありません。<span class="txt-bold marker-gold">気づいたその日が、あなたのスタートです。</span>
+    </p>
+
+    <p class="body-text">
+      私が20年以上という莫大な時間とお金をかけて学んだ教訓を、あなたは1ミリも遠回りせず、もっと早く知ってください。
+    </p>
+
+    <p class="body-text">
+      そのために、このLINEがあります。
+    </p>
+
+    <!-- ラスト一言 -->
+    <div class="final-box">
+      <span class="final-badge">🏆 ややから一言</span>
+      <span class="final-text">女性はあなたの言葉より、普段の「所作」を見ている。</span>
+      <span class="final-subtext">気づくだけで、男は何歳からでも、どこからでも変われます。</span>
     </div>
 
   </div>
